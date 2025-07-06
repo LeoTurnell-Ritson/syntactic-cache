@@ -1,6 +1,6 @@
 [project]
 name = "syntactic-cache"
-version = "0.1.0"
+version = "0.1.1"
 description = "Syntactic cached property generator for classes."
 readme = "README.md"
 requires-python = ">=3"
