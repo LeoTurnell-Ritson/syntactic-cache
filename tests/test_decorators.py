@@ -94,3 +94,18 @@ class TestDecorators(unittest.TestCase):
 
                 def get_square(self):
                     pass
+
+    def test_make_cached_properties_skip_methods_with_multiple_arguments(self):
+        """Test that make_cached_properties skips methods with multiple arguments."""
+        @make_cached_properties
+        class TestClass:
+            def __init__(self, value):
+                self._value = value
+
+            def get_power(self, power):
+                return self._value ** power
+
+        instance = TestClass(2)
+        self.assertEqual(instance.get_power(2), 4)
+        with self.assertRaises(AttributeError):
+            _ = instance.square
