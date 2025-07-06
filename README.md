@@ -18,7 +18,7 @@ pip install syntactic-cache
 
 ## Usage
 
-Here's a simple example of how to use Syntactic Cache, curently the library support 'get_' and 'is_' prefixes for methods.
+Here's a simple example of how to use the `@make_cached_properties` decorator.
 
 ```python
 from syntactic_cache import do_not_make_cached_property, make_cached_properties
