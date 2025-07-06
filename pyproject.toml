@@ -1,0 +1,46 @@
+[project]
+name = "syntactic-cache"
+version = "0.1.0"
+description = "Syntactic cached property generator for classes."
+readme = "README.md"
+requires-python = ">=3"
+dependencies = []
+license = {text = "MIT"}
+authors = [{ name = "Leo Turnell-Ritson", email = "l.turnell.ritson@gmail.com" }]
+
+[project.optional-dependencies]
+dev = [
+	"ruff",
+]
+test = [
+	"coverage",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 88
+preview = true
+
+[tool.ruff.lint]
+select = [
+	"F",
+	"E",
+	"W",
+	"I",    # Isort
+	"D",    # pydocstyle
+	"DOC",  # docstrings
+	"B",    # Python bugbear
+	"N",    # Naming conventions
+]
+
+ignore = [
+ 	"D100",  # Ignore missing module docstring
+	"D104",  # Ignore missing docstring in __init__.py
+	"D107",  # Ignore missing docstring in __init__ method
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
