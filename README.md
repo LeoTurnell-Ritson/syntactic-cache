@@ -4,7 +4,9 @@
 [![codecov](https://codecov.io/gh/LeoTurnell-Ritson/syntactic-cache/branch/master/graph/badge.svg)](https://codecov.io/gh/leoturnell-ritson/syntactic-cache/)
 [![PyPI version](https://img.shields.io/pypi/v/syntactic-cache.svg)](https://pypi.org/project/syntactic-cache)
 
-Syntactic Cache is a Python library that allows you to automatically create cached properties for methods in your classes, using the syntax of the methods to determine which methods should be cached. I.e, methods with the `get_` prefix will have a cached property created for them using the method name without the prefix, this allows for easy refactoring of existing code adding cached properties of functions 'for free'. The cache is a simple memory cache linked to each instance of the class. 
+Syntactic Cache is a Python library that allows you to automatically create cached properties for methods in your classes, using the syntax of the methods to determine which methods should be cached. 
+
+I.e, methods with the `get_` prefix will have a cached property created for them using the method name without the prefix, this allows for easy refactoring of existing code adding cached properties of functions 'for free'. The cache is a simple memory cache linked to each instance of the class. 
 
 ## Installation
 
