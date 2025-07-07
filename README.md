@@ -6,7 +6,7 @@
 
 Syntactic Cache is a Python library that allows you to automatically create cached properties for methods in your classes, using the syntax of the methods to determine which methods should be cached. 
 
-I.e, methods with the `get_` prefix will have a cached property created for them using the method name without the prefix, this allows for easy refactoring of existing code adding cached properties of functions 'for free'. The cache is a simple memory cache linked to each instance of the class. 
+I.e, methods with a given prefix will have a cached property created for them using the method name without the prefix, this allows for easy refactoring of existing code adding cached properties of functions 'for free'. The cache is a simple memory cache linked to each instance of the class. 
 
 ## Installation
 
@@ -23,7 +23,7 @@ Here's a simple example of how to use the `@make_cached_properties` decorator.
 ```python
 from syntactic_cache import do_not_make_cached_property, make_cached_properties
 
-@make_cached_properties
+@make_cached_properties('get', 'is')
 class MyClass:
     def __init__(self, value):
         self.value = value
