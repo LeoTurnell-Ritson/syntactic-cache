@@ -9,7 +9,7 @@ class TestDecorators(unittest.TestCase):
     def test_make_cached_properties(self):
         """Test that make_cached_properties create a property from get prefix."""
 
-        @make_cached_properties
+        @make_cached_properties('get')
         class TestClass:
 
             def __init__(self, value):
@@ -42,7 +42,7 @@ class TestDecorators(unittest.TestCase):
 
     def test_make_cached_properties_does_not_cache_calls_to_original_method(self):
         """Test that make_cached_properties does not cache existing methods."""
-        @make_cached_properties
+        @make_cached_properties('get')
         class TestClass:
             def __init__(self, value):
                 self._value = value
@@ -56,7 +56,7 @@ class TestDecorators(unittest.TestCase):
 
     def test_make_cached_properties_skips_decorated_methods(self):
         """Test that make_cached_properties skips decorated methods."""
-        @make_cached_properties
+        @make_cached_properties('get')
         class TestClass:
             def __init__(self, value):
                 self._value = value
@@ -72,7 +72,7 @@ class TestDecorators(unittest.TestCase):
 
     def test_make_cached_properties_skips_not_syntax(self):
         """Test that make_cached_properties skips methods with alt. prefix."""
-        @make_cached_properties
+        @make_cached_properties('get')
         class TestClass:
             def __init__(self, value):
                 self._value = value
@@ -88,7 +88,7 @@ class TestDecorators(unittest.TestCase):
     def test_make_cached_properties_raises_value_error_if_clash(self):
         """Test that make_cached_properties raises ValueError if a clash occurs."""
         with self.assertRaises(ValueError):
-            @make_cached_properties
+            @make_cached_properties('get')
             class TestClass:
                 square = None
 
@@ -97,7 +97,7 @@ class TestDecorators(unittest.TestCase):
 
     def test_make_cached_properties_skip_methods_with_multiple_arguments(self):
         """Test that make_cached_properties skips methods with multiple arguments."""
-        @make_cached_properties
+        @make_cached_properties('get')
         class TestClass:
             def __init__(self, value):
                 self._value = value
